@@ -56,10 +56,9 @@ export default class SignUp extends Component {
         <div className="card container text-center py-5 mt-7">
           <form className="mt-5 py-5 px-5" onSubmit={this.handleSubmit}>
             <h1>
-              Registrarse en
+              Register in
             <Link className="title ml-2" to="/">Chatty</Link>
             </h1>
-            <p className="lead">Llena la información para crear una cuenta</p>
             <div className="form-group">
               <input className="form-control" placeholder="Email" name="email" type="email" onChange={this.handleChange} value={this.state.email}></input>
             </div>
@@ -68,17 +67,17 @@ export default class SignUp extends Component {
             </div>
             <div className="form-group">
               {this.state.error ? <p className="text-danger">{this.state.error}</p> : null}
-              <button className="btn btn-primary px-5" type="submit">Registrarse</button>
+              <button className="buttons" type="submit">Register</button>
             </div>
-            <p>También puedes registrarte con uno de estos servicios</p>
-            <button className="btn btn-info mr-2" type="button" onClick={this.googleSignIn}>
+            <p>Or register with...</p>
+            <button className="buttons" type="button" onClick={this.googleSignIn}>
               Registrarse con Google
             </button>
-            <button className="btn btn-secondary" type="button" onClick={this.githubSignIn}>
+            <button className="buttons" type="button" onClick={this.githubSignIn}>
               Registrarse con GitHub
             </button>
             <hr></hr>
-            <p>¿Ya tienes una cuenta? <Link to="/login">Iniciar Sesión</Link></p>
+            <p>You have an account? <Link to="/login">Login</Link></p>
           </form>
         </div>
       </div>

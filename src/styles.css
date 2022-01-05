@@ -1,4 +1,13 @@
 .buttons {
-    border-color: 1px solid aqua;
-    border-radius: 10%;
+    border-color: 1px solid rgb(145, 196, 174);
+    border-radius: 8%;
+    background-color: rgba(119, 189, 189, 0.651);
+    margin: 3px;
+    color:rgb(46, 170, 112);
+}
+
+.chat{
+    align-items: center;
+    align-content: center;
+    margin-left: 5px;
 }

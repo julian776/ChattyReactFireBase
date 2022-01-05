@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { auth } from '../services/firebase';
+import {auth} from './../services/firebase';
 
 function Header() {
     return (

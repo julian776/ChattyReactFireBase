@@ -92,17 +92,17 @@ export default class Login extends Component {
             {this.state.error ? (
               <p className="text-danger">{this.state.error}</p>
             ) : null}
-            <button className="btn btn-primary px-5" type="submit">Iniciar sesión</button>
+            <button className="btn btn-primary px-5" type="submit">Login with email</button>
           </div>
-          <button className="btn btn-info mr-2" type="button" onClick={this.googleSignIn}>
+          <button className="buttons" type="button" onClick={this.googleSignIn}>
             Sign In With Google
           </button>
-          <button className="btn btn-secondary" type="button" onClick={this.githubSignIn}>
+          <button className="buttons" type="button" onClick={this.githubSignIn}>
             Sign In With GitHub
           </button>
           <hr />
           <p>
-            Register <Link to="/signup">Registrarse</Link>
+            Don't have an account? <Link to="/signup">Register</Link>
           </p>
         </form>
         </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { auth } from "../services/firebase";
-import { db } from "../services/firebase";
+import { logout } from "../helpers/auth";
+import {auth} from "../services/firebase";
+import {db} from "../services/firebase";
 import Header from "./../components/Headers";
 
 export default class Chat extends Component {
@@ -58,6 +59,7 @@ export default class Chat extends Component {
       });
       this.setState({ content: "" });
       chatArea.scrollBy(0, chatArea.scrollHeight);
+      logout()
     } catch (error) {
       this.setState({ writeError: error.message });
     }
@@ -74,18 +76,14 @@ export default class Chat extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <div className="chat-container">
+        <Header className="chat"/>
+        <div className="chat">
           <div className="chat-area" ref={this.myRef}>
-            {/* loading indicator */}
             {this.state.loadingChats ? (
               <div className="spinner-border text-success" role="status">
                 <span className="sr-only">Loading...</span>
               </div>
-            ) : (
-              ""
-            )}
-            {/* chat area */}
+            ) : ("")}
             {this.state.chats.map((chat) => {
               return (
                 <p
@@ -115,12 +113,11 @@ export default class Chat extends Component {
             <p className="text-danger">{this.state.error}</p>
           ) : null}
           <button type="submit" className="btn btn-info px-5 mt-4">
-            Enviado
+            Send
           </button>
         </form>
         <div className="py-5 mx-3">
-          Loggeado como:{" "}
-          <strong className="text-info">{this.state.user.email}</strong>
+          Logged as {this.state.user.email}
         </div>
       </div>
       </div>
