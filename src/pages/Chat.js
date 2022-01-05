@@ -59,7 +59,6 @@ export default class Chat extends Component {
       });
       this.setState({ content: "" });
       chatArea.scrollBy(0, chatArea.scrollHeight);
-      logout()
     } catch (error) {
       this.setState({ writeError: error.message });
     }
@@ -118,6 +117,7 @@ export default class Chat extends Component {
         </form>
         <div className="py-5 mx-3">
           Logged as {this.state.user.email}
+          <button className="buttons" onClick={()=> {logout()}}>Logout</button>
         </div>
       </div>
       </div>
